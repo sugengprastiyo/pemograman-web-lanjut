@@ -49,6 +49,11 @@ class mahasiswa_model extends CI_Model
         $this->db->or_like('jurusan', $keyword);
         return $this->db->get('mahasiswa')->result_array();
     }
+    public function datatabels()
+    {
+        $query = $this->db->order_by('id', 'DESC')->get('mahasiswa');
+        return $query->result();
+    }
 }
     
     /* End of file mahasiswa_model.php */
